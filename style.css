@@ -1,0 +1,682 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #f2f2f2;
+  scroll-behavior: smooth;
+}
+
+ul,
+nav {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  opacity: 1;
+  color: #f2f2f2;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+a.btn {
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  opacity: 1;
+  transition: all 400ms;
+}
+
+a.btn:hover {
+  opacity: 0.75;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 80px;
+  background-color: #22223b;
+}
+
+section.welcome {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/background.jpg);
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section:not(.welcome):nth-child(even) {
+  background-color: #3d5a80;
+}
+
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+hr {
+  width: 250px;
+  height: 3px;
+  background-color: #3d5a80;
+  border: 0;
+  margin-bottom: 50px;
+}
+
+section h3.title {
+  text-transform: capitalize;
+  font: bold 48px "Amatic SC", sans-serif;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+section p {
+  max-width: 775px;
+  line-height: 2;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  section {
+    padding: 50px 20px;
+  }
+}
+
+/*Header Styles*/
+
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 100px 0;
+  animation: 1s fadein 0.5s forwards;
+  opacity: 0;
+  color: #fff;
+  z-index: 2;
+  font-size: large;
+  background-color: transparent;
+}
+
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}
+
+header nav {
+  display: flex;
+  margin: 0 2rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  width: 2rem;
+  height: 4px;
+  background-color: #f2f2f2;
+  margin-bottom: 0.5rem;
+  margin: 5px 0;
+}
+
+/* mobile navbar*/
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  nav {
+    background-color: #22223b;
+    position: fixed;
+    top: 6rem;
+    right: -120%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    align-items: center;
+    gap: 1rem;
+    transition: 0.3s;
+  }
+
+  .navtop {
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+}
+
+.active {
+  right: -2rem;
+}
+header nav li {
+  margin: 0 15px;
+}
+
+.logo {
+  padding: 0.5rem;
+  height: 100px;
+  border-radius: 100%;
+}
+/*Welcome Styles*/
+
+.welcome {
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  color: #f2f2f2;
+  padding-bottom: 10px;
+}
+
+.welcome .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+
+/*Tempat Jalan*/
+.jalanjalan {
+  display: inline-block;
+  justify-content: center;
+}
+
+.subtitle {
+margin-bottom: 0;
+font-style: oblique;
+position: absolute;
+text-decoration: solid;
+font-size: xx-large;
+text-align: center;
+font-weight: bold;
+color: #22223b, #fff;
+display: block;
+background: #3d5a80;
+}
+
+
+.tempatjalan {
+display: block;
+width: 1000px;
+overflow: hidden;
+margin: 0;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.isitempatjalan {
+  position: relative;
+text-align: end;
+  margin-top: -300px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+  padding: 5px;
+  font-weight: lighter;
+  color: #fff;
+  background-color: #3d5a80;
+}
+
+.tempatjalanimgslider img {
+  width: 1000px;
+  position: static;
+}
+
+.tempatjalanimgslider {
+  display: flex;
+  width: 100%;
+  transition: 2s;
+}
+	
+#tempatjalanslide1:target ~ .tempatjalanimgslider {
+  margin-left: 0px;
+}
+#tempatjalanslide2:target ~ .tempatjalanimgslider {
+  margin-left: -100%;
+}
+#tempatjalanslide3:target ~ .tempatjalanimgslider {
+  margin-left: -200%;
+}
+#tempatjalanslide4:target ~ .tempatjalanimgslider {
+  margin-left: -300%;
+}
+#tempatjalanslide5:target ~ .tempatjalanimgslider {
+  margin-left: -400%;
+}
+#tempatjalanslide6:target ~ .tempatjalanimgslider {
+  margin-left: -500%;
+}
+
+.navslidetempatjalan a {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-color: #f2f2f2;
+  font-size: 0px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.navslidetempatjalan a:hover {
+  background-color: transparent;
+  transition: 1s;
+}
+
+.navslidetempatjalan {
+  text-align: center;
+  margin-top: -60px;
+}
+
+@media screen and (max-width: 800px) {
+
+}
+
+/*GUNUNG JALAN*/
+
+.gunungjalan {
+  display: block;
+  width: 1000px;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+  }
+  .gunungjalanimgslider img {
+    width: 1000px;
+    position: static;
+    height: 500px;
+  }
+  
+  .isigunungjalan {
+    position: relative;
+  text-align: end;
+    margin-top: -230px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    padding: 5px;
+    font-weight: lighter;
+    color: #fff;
+  background-color: #3d5a80;
+  }
+
+  .gunungjalanimgslider {
+    display: flex;
+    width: 100%;
+    transition: 2s;
+  }
+    
+  #gunungjalanslide1:target ~ .gunungjalanimgslider {
+    margin-left: 0px;
+  }
+  #gunungjalanslide2:target ~ .gunungjalanimgslider {
+    margin-left: -100%;
+  }
+  #gunungjalanslide3:target ~ .gunungjalanimgslider {
+    margin-left: -200%;
+  }
+  #gunungjalanslide4:target ~ .gunungjalanimgslider {
+    margin-left: -300%;
+  }
+  #gunungjalanslide5:target ~ .gunungjalanimgslider {
+    margin-left: -400%;
+  }
+  #gunungjalanslide6:target ~ .gunungjalanimgslider {
+    margin-left: -500%;
+  }
+  #gunungjalanslide7:target ~ .gunungjalanimgslider {
+    margin-left: -600%;
+  }
+  #gunungjalanslide8:target ~ .gunungjalanimgslider {
+    margin-left: -700%;
+  }
+  #gunungjalanslide9:target ~ .gunungjalanimgslider {
+    margin-left: -800%;
+  }
+  #gunungjalanslide10:target ~ .gunungjalanimgslider {
+    margin-left: -900%;
+  }
+  
+  .navslidegunungjalan a {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-color: #f2f2f2;
+    font-size: 0px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+  
+  .navslidegunungjalan a:hover {
+    background-color: transparent;
+    transition: 1s;
+  }
+  
+  .navslidegunungjalan {
+    text-align: center;
+    margin-top: -60px;
+  }
+
+/* lokal jalan*/
+
+.lokaljalantitle {
+  margin-top: 80px;
+}
+
+.lokaljalanorang {
+  justify-content: center;
+  margin-top: 10px;
+}
+.localkevin {
+  justify-content: center;
+  text-align: center;
+}
+
+.localname {
+  font-size: 20px;
+}
+
+.localbio {
+  font-size: 14px;
+  margin-bottom: 0;
+  text-align: center;
+  margin-left: 110px;
+}
+.localfoto {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+
+/* welcome*/
+.welcome h1 {
+  font: 72px "Amatic SC", sans-serif;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px;
+  font-weight: lighter;
+}
+
+.welcome h3 {
+  font: 28px "Raleway", sans-serif;
+  font-weight: 300;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+}
+
+.welcome a.btn {
+  padding: 20px 46px;
+  background-color: #3d5a80;
+}
+
+.welcome-content-area {
+  opacity: 0;
+  margin-top: 100px;
+  animation: 1s slidefade 1s forwards;
+}
+
+
+
+@keyframes slidefade {
+  100% {
+    opacity: 1;
+    margin: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .welcome {
+    min-height: 600px;
+  }
+
+  .welcome h1 {
+    font-size: 40px;
+  }
+
+  .welcome h3 {
+    font-size: 20px;
+  }
+
+  .welcome a.btn {
+    padding: 15px 40px;
+  }
+}
+
+/* haki section */
+.hakifoto {
+  height: 300px;
+  width: 250px;
+}
+
+/* tim section */
+
+.team-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.tim {
+  width: 300px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.timname {
+  font-size: 20px;
+}
+
+.timbio {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.timfoto {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+@media (max-width: 1100px) {
+  .destinations .grid li.small,
+  .destinations .grid li.large {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 800px) {
+  .destinations .grid li.small,
+  .destinations .grid li.large {
+    flex-basis: 100%;
+  }
+}
+
+/*Packages Section*/
+
+.services .grid li {
+  padding: 50px;
+  flex-basis: 50%;
+  text-align: center;
+  gap: 1rem;
+}
+
+.services .grid li i {
+  color: #f2f2f2;
+}
+
+.servies .grid li h4 {
+  font-size: 30px;
+  margin: 25px 0;
+}
+
+@media (max-width: 800px) {
+  .services .grid li {
+    flex-basis: 100%;
+    padding: 20px;
+  }
+}
+
+/*about us Section*/
+
+
+.about .quote {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.2;
+  font-style: normal;
+  margin-top: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.author {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+  margin-top: -20px;
+  margin-bottom: 0px;
+
+}
+
+.about {
+  display: flex;
+}
+
+.aboutsubtitle {
+margin-top: -10px;
+font-weight: bolder;
+margin-bottom: 0;
+}
+
+.isiabout {
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.jelasan {
+  display: inline-block;
+  margin-left: -100px -200px;
+  background-color: #22223b;
+
+}
+@media (max-width: 800px) {
+  .testimonials .quote {
+    font-size: 18px;
+    margin: 15px 0;
+  }
+
+  .testimonials .author {
+    font-size: 14px;
+  }
+}
+
+/*Contact Section*/
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.contact-link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.contact form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+}
+
+.contact form .btn {
+  padding: 18px 42px;
+  background-color: #3d5a80;
+}
+
+.contact form input {
+  padding: 15px;
+  margin-right: 30px;
+  font-size: 16px;
+  color: #555;
+  flex: 1;
+  width: 150px;
+}
+
+@media (max-width: 800px) {
+  .contact form input {
+    flex-basis: 100%;
+    margin: 0 0 20px 0;
+  }
+}
+
+/*Footer Section*/
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #3d5a80;
+  color: #f2f2f2;
+  padding: 20px 0;
+}
+
+footer p {
+  text-transform: uppercase;
+  font-size: 14px;
+  opacity: 0.6;
+  align-self: center;
+}
+
+@media (max-width: 1100px) {
+  footer {
+    flex-direction: column;
+  }
+
+  footer p {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
